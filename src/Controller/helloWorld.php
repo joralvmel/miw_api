@@ -32,8 +32,10 @@ class helloWorld extends AbstractController
                 'webpage' => 'https://janedoe.com'
             ]
         ];
-        return new Response(
-            json_encode($authors)
-        );
+        // dump($authors);
+        // return new Response(
+        //    json_encode($authors)
+        // );
+        return $this->json($authors);
     }
 }
