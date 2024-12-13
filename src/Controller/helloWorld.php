@@ -2,17 +2,16 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class helloWorld
+class helloWorld extends AbstractController
 {
     #[Route('/hello', name: 'home', methods: ['GET', 'HEAD'])]
     public function index(): Response
     {
-        return new Response(
-            'Hello World!'
-        );
+        return  $this->render('home/helloWorld.html.twig');
     }
 
     #[Route
