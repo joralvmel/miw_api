@@ -15,4 +15,26 @@ class helloWorld
         );
     }
 
+    #[Route
+    (
+        path:'/api/v1/authors',
+        name: 'authors',
+        methods: ['GET', 'HEAD']
+    )]
+    public function getAuthors(): Response
+    {
+        $authors = [
+            [
+                'name' => 'John Doe',
+                'webpage' => 'https://johndoe.com'
+            ],
+            [
+                'name' => 'Jane Doe',
+                'webpage' => 'https://janedoe.com'
+            ]
+        ];
+        return new Response(
+            json_encode($authors)
+        );
+    }
 }
